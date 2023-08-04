@@ -32,10 +32,11 @@ if 'clicked' not in st.session_state:
 connection_button = st.button("Connect to Allen Institute Cell Types Cache", on_click=clicked, args=[1])
 if st.session_state.clicked[1]:
     conn = st.experimental_connection('AllenInstituteConnection', AllenInstituteConnection)
-    conn = conn._connect()
+    c = conn.cursor()
+    # conn = conn._connect()
     st.write(conn)
 
-    data_set = conn.get_ephys_data(464212183)
+    data_set = conn.get_data(464212183)
 
 if st.session_state.clicked[1]:
     sweep_button = st.button("Plot Waveform Sweeps", on_click=clicked, args=[2])
