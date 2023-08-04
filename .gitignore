@@ -173,3 +173,9 @@ build/
 __pycache__/
 *.egg-info/
 *.nwb
+
+# config
+config/
+
+# manifest
+*.json
